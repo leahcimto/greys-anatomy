@@ -38,9 +38,23 @@ function calculateTime() {
     for (let i = 1; i < season; i++) {
         totalEpisodes += episodeCounts[i];
     }
-
     totalEpisodes += episode; // Add episodes from the current season
     const totalMinutes = totalEpisodes * episodeDuration;
+
+    // Convert minutes to days, hours, and minutes
+    const days = Math.floor(totalMinutes / 1440);
+    const hours = Math.floor((totalMinutes % 1440) / 60);
+    const minutes = totalMinutes % 60;
+
     const resultDiv = document.getElementById('result');
-    resultDiv.textContent = `Total watch time: ${totalMinutes} minutes for ${totalEpisodes} episodes.`;
+    if (days < 1) {
+        if (hours < 1){
+            resultDiv.textContent = `You have spent ${minutes} minute${minutes === 1 ? '' : 's'} watching Grey's Anatomy. That's ${totalEpisodes} episode${totalEpisodes === 1 ? '' : 's'}.`;
+        } else if (hours >= 1) {
+            resultDiv.textContent = `You have spent {hours} hour${hours === 1 ? '' : 's'} and ${minutes} minute${minutes === 1 ? '' : 's'} watching Grey's Anatomy. That's ${totalEpisodes} episodes.`;
+        }
+    } else if (days >= 1) {
+        resultDiv.textContent = `You have spent ${days} day${days === 1 ? '' : 's'}, ${hours} hour${hours === 1 ? '' : 's'}, and ${minutes} minute${minutes === 1 ? '' : 's'} watching Grey's Anatomy. That's ${totalEpisodes} episodes.`;
+    }
 }
+
