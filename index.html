@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grey's Anatomy Watch Time Calculator</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<h1>Grey's Anatomy Watch Time Calculator</h1>
+	<label for="seasonSelect">Select Season:</label>
+	<select id="seasonSelect">
+		<!-- Options will be populated by JavaScript -->
+	</select>
+
+	<label for="episodeSelect">Select Episode:</label>
+	<select id="episodeSelect">
+		<!-- Options will be populated based on season selection -->
+	</select>
+
+	<button onclick="calculateTime()">Calculate Watch Time</button>
+
+	<div id="result"></div>
+
+	<script src="script.js"></script>
+</body>
+</html>
