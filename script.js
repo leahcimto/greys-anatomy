@@ -31,9 +31,15 @@ window.onload = function() {
 };
 
 function calculateTime() {
-    const season = document.getElementById('seasonSelect').value;
-    const episode = document.getElementById('episodeSelect').value;
-    const totalEpisodes = parseInt(episode, 10);
+    const season = parseInt(document.getElementById('seasonSelect').value, 10);
+    const episode = parseInt(document.getElementById('episodeSelect').value, 10);
+    let totalEpisodes = 0;
+
+    for (let i = 1; i < season; i++) {
+        totalEpisodes += episodeCounts[i];
+    }
+
+    totalEpisodes += episode; // Add episodes from the current season
     const totalMinutes = totalEpisodes * episodeDuration;
     const resultDiv = document.getElementById('result');
     resultDiv.textContent = `Total watch time: ${totalMinutes} minutes for ${totalEpisodes} episodes.`;
