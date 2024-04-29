@@ -51,7 +51,7 @@ function calculateTime() {
         if (hours < 1){
             resultDiv.textContent = `You have spent ${minutes} minute${minutes === 1 ? '' : 's'} watching Grey's Anatomy. That's ${totalEpisodes} episode${totalEpisodes === 1 ? '' : 's'}.`;
         } else if (hours >= 1) {
-            resultDiv.textContent = `You have spent {hours} hour${hours === 1 ? '' : 's'} and ${minutes} minute${minutes === 1 ? '' : 's'} watching Grey's Anatomy. That's ${totalEpisodes} episodes.`;
+            resultDiv.textContent = `You have spent ${hours} hour${hours === 1 ? '' : 's'} and ${minutes} minute${minutes === 1 ? '' : 's'} watching Grey's Anatomy. That's ${totalEpisodes} episodes.`;
         }
     } else if (days >= 1) {
         resultDiv.textContent = `You have spent ${days} day${days === 1 ? '' : 's'}, ${hours} hour${hours === 1 ? '' : 's'}, and ${minutes} minute${minutes === 1 ? '' : 's'} watching Grey's Anatomy. That's ${totalEpisodes} episodes.`;
